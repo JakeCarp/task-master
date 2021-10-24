@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js";
-import { List } from "../Models/List";
+import { List } from "../Models/List.js";
 import { saveState } from "../Utils/LocalStorage.js";
 
 //private
@@ -7,7 +7,10 @@ import { saveState } from "../Utils/LocalStorage.js";
 
 
 
-export class ListsService {
+class ListsService {
+    constructor() {
+        console.log('hello from lists service')
+    }
     createList(listData) {
         let list = new List(listData)
         ProxyState.lists = [...ProxyState.lists, list]

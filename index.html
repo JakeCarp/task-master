@@ -28,7 +28,23 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <div id="app"></div>
+          <form class="row align-items-end" onsubmit="app.listsController.createList()">
+            <div class="col-3">
+              <label for="title" class="form-label">List Title</label>
+              <input type="text" class="form-control" name="listTitle" id="listTitle" aria-describedby="list title"
+                placeholder="Title...">
+            </div>
+            <div class="col-3">
+              <label for="listColor" class="form-label">List Color</label>
+              <input type="color" class="form-control" name="listColor" id="listColor" aria-describedby="list color"
+                placeholder="">
+            </div>
+            <div class="col-3"><button class="btn btn-primary  w-100 p-2">Create List</button></div>
+          </form>
+          <div id="app" class="row">
+
+
+          </div>
         </div>
       </div>
     </div>

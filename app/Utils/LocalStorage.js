@@ -6,7 +6,7 @@ import { Task } from "../Models/Task.js";
 
 
 export function saveState() {
-    localStorage.setItem('task-,master', JSON.stringify({
+    localStorage.setItem('task-master', JSON.stringify({
         lists: ProxyState.lists,
         tasks: ProxyState.tasks
     }))
@@ -16,7 +16,7 @@ export function saveState() {
 export function loadState() {
     let data = JSON.parse(localStorage.getItem('task-master'))
 
-    if (data) {
+    if (data != null) {
         ProxyState.lists = data.lists.map(l => new List(l))
         ProxyState.tasks = data.tasks.map(t => new Task(t))
     }

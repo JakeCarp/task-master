@@ -16,7 +16,7 @@ export class List {
                 <div class="card-body" style="background-color:${this.color}">
                     <h4 class="card-title">${this.title}</h4>
                 </div>
-                <button class="btn btn-warning" onclick="this.app.listsController.deleteList(${this.id})><i class="mdi mdi-trash-can></i></button>
+                <button class="btn btn-warning" onclick="app.listsController.deleteList('${this.id}')">Delete List</button>
             </div>
             <div>
                 ${this.getTasks()}
@@ -25,7 +25,7 @@ export class List {
         <div class="col-10">
           <input type="text" class="form-control" name="taskName" id="" aria-describedby="helpId" placeholder="add task">
         </div>
-        <button class="btn btn-dark col-2"> add task</button>
+        <button class="btn btn-dark col-2">+</button>
         </form>
         </div>
         `
@@ -34,7 +34,7 @@ export class List {
 
     getTasks() {
         let tasks = ProxyState.tasks.filter(t => t.listId == this.id)
-        let template
+        let template = ``
         tasks.forEach(t => {
             template += t.Template
         });

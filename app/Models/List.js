@@ -23,7 +23,7 @@ export class List {
             </div>
             <form class="row align-items-end" onsubmit="app.tasksController.createTask('${this.id}')">
         <div class="col-10">
-          <input type="text" class="form-control" name="taskName" id="" aria-describedby="helpId" placeholder="add task">
+          <input type="text" minlength="3" maxlength="50" class="form-control" name="taskName" id="" aria-describedby="helpId" placeholder="add task">
         </div>
         <button class="btn btn-dark col-2">+</button>
         </form>
